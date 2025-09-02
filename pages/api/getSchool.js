@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     });
 
     const [rows] = await db.execute("SELECT * FROM schools");
-    res.status(200).json(rows);
+    res.status(200).json(rows || []);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
