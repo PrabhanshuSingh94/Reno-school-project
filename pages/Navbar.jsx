@@ -14,7 +14,7 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-white font-medium">
           <li>
-            <Link href="/showSchool" className="hover:text-gray-200 transition-colors duration-200">
+            <Link href="/" className="hover:text-gray-200 transition-colors duration-200">
               Home
             </Link>
           </li>
