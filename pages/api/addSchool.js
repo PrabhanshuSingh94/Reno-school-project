@@ -2,7 +2,7 @@ import mysql from "mysql2/promise";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, address, city, state, contact, email_id, imageName } = req.body;
+    const { name, address, city, state, contact, email_id, imageBase64 } = req.body;
 
     try {
       const db = await mysql.createConnection({
@@ -12,12 +12,9 @@ export default async function handler(req, res) {
         database: process.env.DB_NAME
       });
 
-      // Use placeholder image instead of saving file
-      const placeholderImage = `/schoolImages/${imageName}`; 
-
       await db.execute(
         "INSERT INTO schools (name, address, city, state, contact, image, email_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        [name, address, city, state, contact, placeholderImage, email_id]
+        [name, address, city, state, contact, imageBase64, email_id]
       );
 
       res.status(200).json({ message: "School added successfully!" });

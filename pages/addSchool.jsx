@@ -28,7 +28,7 @@ export default function AddSchool() {
         body: JSON.stringify({
           ...data,
           imageBase64: base64,
-          imageName: file.name,
+        //   imageName: file.name,
         }),
       });
 
