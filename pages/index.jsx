@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 
-export default function ShowSchools() {
+export default function Home() {
   const [schools, setSchool] = useState([]);
 
   useEffect(() => {
