@@ -26,7 +26,7 @@ export default function Home() {
           >
             <div className="relative h-56 w-full overflow-hidden rounded-t-3xl">
               <img
-                src={school.image}
+                src={school.image  || "/schoolImages/registration.png"}
                 alt={school.name}
                 className="object-cover w-full h-full filter brightness-95 hover:brightness-100 transition-all duration-500"
                 loading="lazy"
