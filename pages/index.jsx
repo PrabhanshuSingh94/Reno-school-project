@@ -19,7 +19,8 @@ export default function Home() {
         Explore Schools
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-        {schools.map((school) => (
+      {schools.length > 0 ? (
+        schools.map((school) => (
           <div
             key={school.id}
             className="bg-white rounded-3xl shadow-lg transition-shadow duration-300 cursor-pointer overflow-hidden transform hover:shadow-xl hover:-translate-y-0.5"
@@ -47,7 +48,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-        ))}
+          
+        ))
+        ) : (
+          <p className="text-center col-span-3">No schools found</p>
+        )}
       </div>
     </div>
     </>
